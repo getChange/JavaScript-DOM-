@@ -21,7 +21,12 @@
             list-style: none;
         }
         
+        li {
+            display: inline-block;
+        }
+        
         a {
+            display: block;
             text-decoration: none;
             color: #000;
         }
@@ -56,22 +61,27 @@
     <img src="./images/big17000.jpg" id="placeholder" alt="">
     <p id="description">Change Image Title</p>
     <script>
-        function showPic(whichPicture) {
-            var source = whichPicture.getAttribute("href");
-            var placeholder = document.getElementById("placeholder");
-            placeholder.setAttribute("src", source);
-            var text = whichPicture.getAttribute("title");
-            var desc = document.getElementById("description");
-            desc.firstChild.nodeValue = text;
-        }
-
-        var links = document.getElementsByTagName("a");
-
-        for (var i = 0; i < links.length; i++) {
-            links[i].onclick = function() {
-                showPic(this);
-                return false;
+        window.onload = function() {
+            function showPic(whichPicture) {
+                var source = whichPicture.getAttribute("href");
+                var placeholder = document.getElementById("placeholder");
+                placeholder.setAttribute("src", source);
+                var text = whichPicture.getAttribute("title") ? whichPicture.getAttribute("title") : "";
+                var desc = document.getElementById("description");
+                desc.firstChild.nodeValue = text;
             }
+
+            function picEvent() {
+                var links = document.getElementsByTagName("a");
+                for (var i = 0; i < links.length; i++) {
+                    links[i].onclick = function() {
+                        showPic(this);
+                        return false;
+                    }
+                }
+            }
+
+            picEvent();
         }
     </script>
 </body>

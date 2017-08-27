@@ -5,7 +5,7 @@
 
 ## 应用点：
 ### DOM属性：
-- childNodes：用来获取任何一个元素的所有子元素
+- childNodes：用来获取任何一个元素的所有子元素；精确查找元素内的全体子元素；返回的是一个数组；
 ```javascript
 element.childNodes; //语法
 ```
@@ -22,5 +22,11 @@ node.nodeValue; //语法
 //举例
 desc.childNodes[0].nodeValue;
 ```
-- firstChild
-- lastChild
+- firstChild：第一个子元素；
+- lastChild：最后一个子元素；
+### 最佳实践
+- 平稳退化
+- 分离JavaScript
+- 向后兼容
+- 性能考虑
+### 图片库的改进
