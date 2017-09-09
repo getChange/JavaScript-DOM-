@@ -36,3 +36,40 @@ desc.childNodes[0].nodeValue;
 - 向后兼容：是否可以做到完整的兼容低版本的浏览器；
 - 性能考虑：图片的加载，代码的加载...
 ### 动态创建标记
+#### 传统方法：`document.write` & `innerHTML`
+- `document.write()`:方便快捷的把字符串插入到文档里；缺点是违背了“行为应该与表现分离”。
+- `innerHTML`属性可以用来读、写某给定元素里的HTML内容。
+    - 优势：当需要把一大段HTML内容插入页面；支持读取写入；
+    - 缺点：无法却分“出入一段HTML内容”和“替换一段HTML内容”
+#### DOM方法
+- createElement方法
+```javascript
+document.createElement(nodeName);
+
+//创建一个p元素
+document.createElement("p");
+```    
+
+- appendChild方法
+```javascript
+
+```
+- 在已有元素后面插入一个元素
+```javascript
+function insertAfter(newElement，targetElement) { //首先引入两个参数
+    var parent = targetElement.parentNode; //将目标元素的parentNode属性保存在parent内
+    if (parent.lastChild == targetElement) { //判断目标元素是不是parent最后一个元素
+        parent.appendChild(newElement);//true 直接添加到最后一个
+    } else {
+        parent.insertBefore(newElement,targetElement.nextSibling);//false 新元素插入目标元素和目标元素的下一个兄弟元素
+    }
+}
+
+/*
+* parentNode属性
+* lastChild属性
+* appendChild属性
+* insertBefore属性
+* nextSibling属性
+*/
+```

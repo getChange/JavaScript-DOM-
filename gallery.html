@@ -6,40 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Image Gallery</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        h1 {
-            margin: 50px 0 0 50px;
-        }
-        
-        ul li {
-            margin: 50px 0 0 50px;
-            list-style: none;
-        }
-        
-        li {
-            display: inline-block;
-        }
-        
-        a {
-            display: block;
-            text-decoration: none;
-            color: #000;
-        }
-        
-        img {
-            margin-top: 60px;
-            margin-left: 60px;
-        }
-        
-        p {
-            margin: 20px 0 0 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/showPic.css">
 </head>
 
 <body>
@@ -60,30 +27,7 @@
     </ul>
     <img src="./images/big17000.jpg" id="placeholder" alt="">
     <p id="description">Change Image Title</p>
-    <script>
-        window.onload = function() {
-            function showPic(whichPicture) {
-                var source = whichPicture.getAttribute("href");
-                var placeholder = document.getElementById("placeholder");
-                placeholder.setAttribute("src", source);
-                var text = whichPicture.getAttribute("title") ? whichPicture.getAttribute("title") : "";
-                var desc = document.getElementById("description");
-                desc.firstChild.nodeValue = text;
-            }
-
-            function picEvent() {
-                var links = document.getElementsByTagName("a");
-                for (var i = 0; i < links.length; i++) {
-                    links[i].onclick = function() {
-                        showPic(this);
-                        return false;
-                    }
-                }
-            }
-
-            picEvent();
-        }
-    </script>
+    <script src="./js/showPic.js"></script>
 </body>
 
 </html>
