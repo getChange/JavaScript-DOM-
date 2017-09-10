@@ -1,6 +1,11 @@
+//V2版本是一个检查兼容性的js
 function displayAbbreviations() {
+    //检查用到的函数方法是否可行
+    if (!document.getElementsByTagName || !document.createElement || !document.createTextNode) {
+        return false;
+    }
+    //取得所有缩略词
     var abbreviations = document.getElementsByTagName("abbr"); //拿到所有的abbr元素
-
     if (abbreviations.length < 1) { //判断文档中的缩略语元素是否存在
         return false;
     }
@@ -15,6 +20,7 @@ function displayAbbreviations() {
         //将definition和key放到数组里
         defs[key] = definition;
     }
+    //创建自定义列表
     var dlist = document.createElement("dl");
     for (key in defs) { //对于defs关联数组里的每个键,把它的值赋给变量key
         var definition = defs[key];

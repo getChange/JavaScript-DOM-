@@ -73,3 +73,28 @@ function insertAfter(newElement，targetElement) { //首先引入两个参数
 * nextSibling属性
 */
 ```
+
+## 充实文档内容
+#### `for...in`
+- 把某个数组的下标临时赋值给一个变量:
+```JavaScript
+for(variable in array)
+```
+- 在进入第一次循环的时候,变量`variable`将被赋值为数组`array`的第一个元素的下标值;在进入第二次循环后,变量`variable`将被赋值为数组`array`的第二个元素的下标值;依次类推,直到遍历完成.
+
+#### 插入自定义列表
+- 对于结构复杂的文档,需要借助特定的`id`才能把新创建的元素插入指定的位置.
+- 对于不是很复杂的文档,只需要把新创建的元素追加到`body`标签.
+    - `DOM core`:引用某给定文档的第一个`body`标签
+    ```JavaScript
+        document.getElemensByTagName("body")[0];
+    ```
+    - `HTML-DOM`:引用某给定文档的`body`属性
+    ```JavaScript
+        //通用语法
+        document.body
+        //第一步:引入标题
+        document.body.appendChild(header);
+        //第二步:引入列表
+        document.body.appendChild(dlist);
+    ```
