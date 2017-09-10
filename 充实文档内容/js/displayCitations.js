@@ -7,6 +7,9 @@ function displayCitations() {
     var quotes = document.getElementsByTagName("blockquote");
     //遍历集合
     for (var i = 0, len = quotes.length; i < len; i++) {
-
+        //找到cite属性
+        if (!quotes[i].getAttribute("cite")) {
+            continue;
+        }
     }
 }
