@@ -112,3 +112,24 @@ for(variable in array)
         //第二步:引入列表
         document.body.appendChild(dlist);
     ```
+## 用JavaScript实现动画效果
+### 基础知识
+- 位置
+```javascript
+ele.style.position = "absolute";
+ele.style.top = "10px";
+ele.style.left = "20px";
+```  
+- 时间
+```javascript
+//设置定时器
+setTimeout("function",interval);
+//复制给一个变量是好的方法
+variable = setTimeout("function",interval);
+//清除定时器:取消'等待执行'队列里的函数;
+clearTimeout(variable);
+//提取字符串内的数字(返回的是整数)
+parseInt(string);//提取字符串内的数值信息
+//提取字符串内的数字(返回的是小数)
+parseFloat(string);//提取字符串内的数值信息
+```  

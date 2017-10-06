@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Design</title>
+    <link rel="stylesheet" href="./css/slideShow.css">
+</head>
+
+<body>
+    <h1>Web Design</h1>
+    <p>These are the things you should know.</p>
+    <ol class="links-list" id="linkslist">
+        <!-- structure 结构 -->
+        <li>
+            <a href="structure.html">Structure</a>
+        </li>
+        <!-- presentation 展示描述 -->
+        <li>
+            <a href="presentation.html">Presentation</a>
+        </li>
+        <!-- behavior 行为 -->
+        <li>
+            <a href="behavior.html">Behavior</a>
+        </li>
+        <div class="slide-show" id="slideShow">
+            <img src="./images/topics.gif" alt="image" id="preview">
+        </div>
+    </ol>
+    <script src="../public/js/addLoadEvent.js"></script>
+    <script src="./js/prepareSlideshow.js"></script>
+    <script src="./js/animate-v1.js"></script>
+</body>
+
+</html>
