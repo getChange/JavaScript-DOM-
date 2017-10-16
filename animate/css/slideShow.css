@@ -1,0 +1,11 @@
+.slide-show {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(59, 226, 87)
+}
