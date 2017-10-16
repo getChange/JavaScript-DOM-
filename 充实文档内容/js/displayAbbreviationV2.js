@@ -16,18 +16,18 @@ function displayAbbreviations() {
         //拿到abbr的title
         var definition = items.getAttribute("title");
         //拿到abbr的nodevalue
-        var key = abbreviations[i].lastChild.nodeValue;
+        var key = items.lastChild.nodeValue;
         //将definition和key放到数组里
         defs[key] = definition;
     }
     //创建自定义列表
     var dlist = document.createElement("dl");
-    for (key in defs) { //对于defs关联数组里的每个键,把它的值赋给变量key
-        var definition = defs[key];
+    for (data in defs) { //对于defs关联数组里的每个键,把它的值赋给变量key
+        var definition = defs[data];
         //创建dt元素
         var dtitle = document.createElement("dt");
         //key创建一个文本节点
-        var dtitle_text = document.createTextNode(key);
+        var dtitle_text = document.createTextNode(data);
         //文本添加到dt元素
         dtitle.appendChild(dtitle_text);
         //创建一个dd元素

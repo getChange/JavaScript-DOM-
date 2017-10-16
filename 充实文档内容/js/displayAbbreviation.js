@@ -11,7 +11,7 @@ function displayAbbreviations() {
         //拿到abbr的title
         var definition = items.getAttribute("title");
         //拿到abbr的nodevalue
-        var key = abbreviations[i].lastChild.nodeValue;
+        var key = items.lastChild.nodeValue;
         //将definition和key放到数组里
         defs[key] = definition;
     }
